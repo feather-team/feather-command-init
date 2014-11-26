@@ -1,0 +1,18 @@
+{
+  "name": "feather-command-init",
+  "version": "0.1.0",
+  "description": "feather auto create project",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "jsyczhanghao@sina.com"
+  },
+  "license": "ISC",
+  "keyword": [
+    "feather",
+    "command",
+    "init"
+  ]
+}
