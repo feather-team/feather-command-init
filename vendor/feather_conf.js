@@ -1,4 +1,4 @@
-feather.config.merge({
+${name}.config.merge({
 	project: {
 		ns: '${ns}',
 		modulename: '${modulename}',
