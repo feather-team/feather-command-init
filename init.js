@@ -36,11 +36,12 @@ exports.register = function(commander){
 		    conf = conf.replace('${name}', feather.cli.name);
 
 		    feather.util.write(_path + feather.cli.name + '_conf.js', conf);
+		    feather.util.mkdir(_path + 'page/' + options.modulename);
 		    feather.util.write(_path + 'page/index.' + feather.config.get('template.suffix'), 'welcome to ' + feather.cli.name);
 		    feather.util.mkdir(_path + 'test');
-		    feather.util.mkdir(_path + 'static/js');
-		    feather.util.mkdir(_path + 'static/css');
-		    feather.util.mkdir(_path + 'static/image');
-		    feather.util.mkdir(_path + 'component');
+		    feather.util.mkdir(_path + 'static/js/' + options.modulename);
+		    feather.util.mkdir(_path + 'static/css/' + options.modulename);
+		    feather.util.mkdir(_path + 'static/image/' + options.modulename);
+		    feather.util.mkdir(_path + 'component/' + options.modulename);
 		});
 };
