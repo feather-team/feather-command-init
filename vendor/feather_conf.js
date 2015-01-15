@@ -1,6 +1,6 @@
-${name}.config.merge({
+${cliname}.config.merge({
 	project: {
-		ns: '${ns}',
+		name: '${name}',
 		modulename: '${modulename}',
 		charset: '${charset}'
 	}

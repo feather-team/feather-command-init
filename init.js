@@ -5,7 +5,7 @@ exports.usage = '[options] <path>'
 exports.desc = 'auto create your project';
 exports.register = function(commander){
 	commander
-		.option('-n, --ns [name]', 'project namespace', String, '')
+		.option('-n, --name [name]', 'project name', String, '')
 		.option('-m, --modulename [name]', 'project modulename', String, '')
 		.option('-c, --charset [value]', 'project charset', String, 'utf-8')
 		.action(function(){
@@ -29,19 +29,19 @@ exports.register = function(commander){
 		    var options = arguments[arguments.length - 1];
 		    var conf = feather.util.read(__dirname + '/vendor/feather_conf.js');
 
-		    ['ns', 'modulename', 'charset'].forEach(function(name){
+		    ['name', 'modulename', 'charset'].forEach(function(name){
 		    	conf = conf.replace('${' + name + '}', options[name]);
 		    });
 
-		    conf = conf.replace('${name}', feather.cli.name);
+		    conf = conf.replace('${cliname}', feather.cli.name);
 
 		    feather.util.write(_path + feather.cli.name + '_conf.js', conf);
 		    feather.util.mkdir(_path + 'page/' + options.modulename);
 		    feather.util.write(_path + 'page/index.' + feather.config.get('template.suffix'), 'welcome to ' + feather.cli.name);
 		    feather.util.mkdir(_path + 'test');
-		    feather.util.mkdir(_path + 'static/js/' + options.modulename);
-		    feather.util.mkdir(_path + 'static/css/' + options.modulename);
-		    feather.util.mkdir(_path + 'static/image/' + options.modulename);
+		    feather.util.mkdir(_path + 'static/' + options.modulename);
+		    feather.util.mkdir(_path + 'static/' + options.modulename);
+		    feather.util.mkdir(_path + 'static/' + options.modulename);
 		    feather.util.mkdir(_path + 'component/' + options.modulename);
 		});
 };
